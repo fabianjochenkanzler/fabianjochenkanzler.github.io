@@ -1,0 +1,168 @@
+@mixin aboutBox($aColor) {
+    min-height: 5rem;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 5rem 5rem 5rem 5rem;
+    height: 5rem;
+
+    border-right: solid 1px $cBlack;
+
+    h2 {
+        @include font($fXanh, $fHeadline, 200, normal, $cWhite);
+        margin-bottom: 5rem;
+        font-size: $fLarge;
+        position: relative;
+        top: -2.25rem;
+    }
+
+    h3 {
+        @include font($fXanh, $fSmall, 200, normal, $cWhite);
+        display: none
+    }
+
+    p {
+        @include font($fFrau, $fSmall, 200, normal, $cWhite);
+        display: none;
+    }
+
+    ul {
+        display: none;
+    }
+
+
+
+    background: linear-gradient(-21deg, transparent, $aColor);
+    background-size: 100vw 300vh;
+    backdrop-filter: blur(2rem);
+    background-position: top left;
+    transition: all 0.5s;
+
+    &:hover {
+        background: linear-gradient(-21deg, transparent, $aColor);
+        background-size: 100vw 300vh;
+        backdrop-filter: blur(2rem);
+        background-position: top left;
+    }
+
+    &:focus {
+        height: auto;
+        outline: none;
+
+
+        h2 {
+            font-size: $fHeadline;
+            top: 0;
+        }
+
+        h3 {
+            display: block;
+        }
+
+        p {
+            display: block;
+        }
+        ul {
+            display: block;
+        }
+    }
+
+    @media (min-width: 768px) {
+        min-height: 100vh;
+        width: 5rem;
+        padding: 5rem 0 5rem 5rem;
+        transition: width 0.5s ease-in-out;
+        overflow-x: hidden;
+        overflow-y: auto;
+        h2 {
+            font-size: $fLarge;
+            line-height: $fHeadline;
+            position: relative;
+            left: -5rem;
+            top: 7.5rem;
+            transform: rotate(-90deg);
+            transform-origin: left top;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:focus {
+            width: calc(50vw - 15rem);
+            outline: none;
+            overflow-y: auto;
+
+            max-height: 100vh;
+
+            h2 {
+                font-size: $fHeadline;
+                transform: rotate(0);
+                left: 0;
+                top: 0;
+            }
+
+            h3 {
+                display: block;
+
+            }
+
+            p {
+                display: block;
+            }
+
+            ul {
+                display: block;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+.aboutInfo {
+    min-height: calc(100vh - 30rem);
+    width: 100%;
+    padding: 5rem 5rem 5rem 5rem;
+    overflow-y: auto;
+
+    border-right: solid 1px $cBlack;
+
+
+    h2 {
+        @include font($fXanh, $fHeadline, 200, normal, $cBlack);
+        margin-bottom: 5rem;
+    }
+
+    h3 {
+        @include font($fXanh, $fRegular, 200, normal, $cBlack);
+    }
+
+    p {
+        @include font($fFrau, $fRegular, 200, normal, $cBlack);
+
+        :hover {
+            background-size: 100% 100%;
+        }
+    }
+
+    @media (min-width: 768px) {
+        height: 100vh;
+    }
+}
+
+.aboutVita {
+    @include aboutBox($cDarkBeige);
+    p {
+    }
+}
+
+.aboutClients {
+    @include aboutBox($cDarkBeige);
+}
+
+.aboutContact {
+    @include aboutBox($cDarkBeige);
+}

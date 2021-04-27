@@ -1,0 +1,156 @@
+$sMain: calc(50vw - 4.5rem);
+
+nav {
+    height: 5rem;
+    width: 100vh;
+    transform: rotate(-90deg) translate(0, -10rem);
+    transform-origin: top right;
+
+    z-index: 1000;
+
+    position: fixed;
+    top: 0;
+    right: -5rem;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    ul {
+        @include font($fXanh, $fLarge, 200, normal, $cBlack);
+        background-color: $cYellow;
+        border: solid 1px $cBlack;
+
+        width: 100%;
+        list-style: none;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    li {
+        height: 5rem;
+        width: 25%;
+        padding: 0 2.5rem 0 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    a {
+        color: $cBlack;
+        text-decoration: none;
+        transition: color 0.5s ease-in-out;
+
+        &:hover {
+            color: $cDarkGray;
+        }
+    }
+
+    i {
+        opacity: 0.3;
+    }
+
+    .rotate {
+        transform: rotate(90deg);
+        transform-origin: top right;
+        z-index: -10;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        .project {
+            visibility: visible;
+            position: absolute;
+            transform: translate(50vw, 0);
+            right: 0;
+            top: 0;
+            height: 100vh;
+            width: calc(50vw - 4.5rem);
+            transition: transform 0.5s ease-in-out;
+            background-position: center center;
+            background-size: cover;
+            background: linear-gradient(21deg, transparent, $cYellow), url(../images/background.jpg) no-repeat center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            backdrop-filter: blur(2rem);
+
+            li {
+                white-space: nowrap;
+                width: auto;
+                margin-bottom: 1.5rem;
+
+                &:hover {
+                    border-radius: 0.5rem;
+                    background: radial-gradient(transparent 50%, $cYellow);
+                    background-size: 100% 0.5rem;
+                    background-repeat: no-repeat;
+                    background-position: bottom;
+                    padding: 0.2rem;
+                    transition: background-size 0.5s;
+                }
+
+                &::after {
+                    background: linear-gradient(21deg, transparent, $cYellow), url(../images/0001uohb.jpg) no-repeat;
+                }
+            }
+
+            &:focus {
+                visibility: hidden;
+                transform: translate(10vw, 0);
+                outline: none;
+            }
+
+            @media (min-width: 768px) {
+                li {
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+
+    li:hover .project {
+        visibility: visible;
+        transform: translate(0, 0);
+    }
+
+    .turn {
+        transform: rotate(90deg);
+        height: 5rem;
+        width: 5rem;
+        margin: 0 auto 0 0;
+        position: absolute;
+        bottom: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        right: 2.5rem;
+
+        font-weight: 100;
+        line-height: 2.2rem;
+        letter-spacing: -0.25rem;
+
+    }
+
+        .logos {
+            transform: rotate(90deg);
+            width: 5rem;
+            margin: 0 auto 0 2.5rem;
+            text-align: center;
+            i {
+                line-height: $fHeadline;
+                margin-right: auto;
+                margin-left: auto;
+                position: relative;
+                width: 50%;
+                font-size: 75%;
+                line-height: 100%;
+            }
+        }
+    
+}

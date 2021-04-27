@@ -1,0 +1,240 @@
+nav {
+    .rotate {
+        background: linear-gradient(21deg, transparent, $cYellow) url(../images/background.jpg) no-repeat;
+        background-position: center center;
+        background-size: cover;
+
+        .project {
+            color: $cWhite;
+            transition: all 0.5s;
+            li {
+                &:hover::before {
+                    background: linear-gradient(21deg, transparent, $cYellow);
+                    background-position: center center;
+                    background-size: cover;
+                    top: 0;
+                    left: 0;
+                    display: block;
+                    content: "";
+                    width: 100vw;
+                    height: 100vh;
+                    position: absolute;
+
+                    z-index: -5;
+                }
+                &:hover::after {
+                    background-position: center center;
+                    background-size: cover;
+                    top: 0;
+                    left: 0;
+                    display: block;
+                    content: "";
+                    width: 100vw;
+                    height: 100vh;
+                    position: absolute;
+
+                    z-index: -10;
+                    filter: grayscale(1) brightness(0.33) sepia(0.5);
+                }
+            }
+        }
+
+        .p01 {
+            &:hover::after {
+                background: linear-gradient(21deg, transparent, $cYellow), url(../images/0001uohb.jpg) no-repeat;
+            }
+        }
+
+        .p02 {
+            &:hover::after {
+                background: linear-gradient(21deg, transparent, $cYellow), url(../images/0402uohb.jpg) no-repeat;
+            }
+        }
+
+        .p03 {
+            &:hover::after {
+                background: linear-gradient(21deg, transparent, $cYellow), url(../images/0409uohb.jpg) no-repeat;
+            }
+        }
+
+        .p04 {
+            &:hover::after {
+                background: linear-gradient(21deg, transparent, $cYellow) url(../images/background.jpg) no-repeat;
+            }
+        }
+    }
+}
+
+.projectTitle {
+    height: 100vh;
+    margin-bottom: 25vh;
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    h1 {
+        @include font($fXanh, $fHeadline, 200, normal, $cWhite);
+
+        border-radius: 1rem;
+        background: linear-gradient(90deg, $cYellow, transparent 40% 60%, $cYellow);
+        background-size: 100% 0.2rem;
+        background-repeat: no-repeat;
+        background-position: bottom;
+
+        // border-bottom: solid 0.2rem $cYellow;
+        margin: 0 auto 1rem auto;
+        padding: 0 0.5rem;
+        display: block
+    }
+
+    p {
+        @include font($fFrau, $fRegular, 200, normal, $cWhite);
+        display: block;
+    }
+
+    a {
+        color: $cWhite;
+    }
+
+}
+
+.projectCardContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    bottom: 0;
+    border: solid 1px $cBlack;
+}
+
+.projectCard {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    
+    width: calc((100vw - 5.5rem) / 3);
+    height: 10vh;
+    border-bottom: solid 1px $cBlack;
+    border-right: solid 1px $cBlack;
+}
+
+.projectGrid {
+    background: linear-gradient(-21deg, transparent, $cWhite);
+    background-size: 100vw 300vh;
+    backdrop-filter: blur(2rem);
+    background-position: top left;
+    margin-bottom: 25vh;
+}
+
+.projectHead {
+    border-bottom: solid 1px $cBlack;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 5rem 5rem 5rem 5rem;
+
+    h2 {
+        @include font($fXanh, $fHeadline, 200, normal, $cBlack);
+    }
+
+    p {
+        margin-left: auto;
+        @include font($fFrau, $fRegular, 200, normal, $cBlack);
+    }
+
+    @media (min-width: 768px) {
+        display: flex;
+        align-items: baseline;
+    }
+}
+
+.projectImg {
+    border-right: solid 1px $cBlack;
+
+    img {
+        width: 100%;
+        border-bottom: solid 1px $cBlack;
+        display: block;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+
+    @media (min-width: 768px) {
+        height: calc(100vh - 17rem);
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 25vw;
+        transition: all 0.5s ease-in-out;
+
+        img {
+            width: 25vw;
+            margin: 0;
+            padding: 0;
+            transition: all 0.5s ease-in-out;
+        }
+
+        &:hover {
+            width: 50vw;
+
+            img {
+                width: 50vw;
+            }
+        }
+    }
+}
+
+.projectInfo {
+    padding: 5rem 5rem 5rem 0;
+    outline: none;
+    padding: 5rem 5rem 5rem 5rem;
+
+    height: 12rem;
+
+    border-bottom: solid 1px $cBlack;
+
+    cursor: pointer;
+
+    transition: all 0.5s ease;
+
+
+    &:focus {
+        height: auto;
+
+        p {
+            display: block;
+        }
+    }
+
+    h3 {
+        @include font($fXanh, $fLarge, 200, normal, $cBlack);
+    }
+
+    p {
+        @include font($fFrau, $fRegular, 200, normal, $cBlack);
+        display: none;
+    }
+
+    @media (min-width: 768px) {
+        height: calc(100vh - 17rem);
+
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        border: 0;
+
+        cursor: default;
+
+        p {
+            display: block;
+        }
+    }
+}

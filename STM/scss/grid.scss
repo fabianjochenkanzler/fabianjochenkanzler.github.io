@@ -1,0 +1,115 @@
+body {
+    display: grid;
+    grid-template-rows: 100vh auto 50vh;
+    grid-template-columns: auto 5rem;
+    grid-template-areas:
+        "header nav"
+        "main nav"
+        "footer nav";
+    gap: 0;
+}
+
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: calc(100vw - 5rem);
+    grid-template-areas:
+        "about"
+        "work"
+        "contact";
+    gap: 0;
+    overflow: hidden;
+    @media (min-width: 768px) {
+        grid-template-columns: calc(100vw - 5.5rem);
+    }
+}
+
+.about {
+    grid-area: about;
+
+    @media (min-width: 768px) {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 8fr repeat(3, auto);
+        grid-template-areas: "aboutInfo aboutVita aboutClients aboutContact";
+    }
+}
+
+.aboutInfo {
+    grid-area: aboutInfo;
+}
+
+.aboutVita {
+    grid-area: aboutVita;
+}
+
+.aboutClients {
+    grid-area: aboutClients;
+}
+
+.aboutContact {
+    grid-area: aboutContact;
+}
+
+.projectHead {
+    grid-area: projectHead;
+
+    @media (min-width: 768px) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+
+.projectInfo {
+    grid-area: projectInfo;
+    @media (min-width: 768px) {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+}
+
+.projectImg {
+    grid-area: projectImg;
+    @media (min-width: 768px) {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+}
+
+footer {
+    grid-area: footer;
+    display: none;
+}
+
+.projectGrid {
+    grid-area: work;
+    height: auto;
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: 20rem auto;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+        "projectHead"
+        "projectInfo"
+        "projectImg";
+
+    @media (min-width: 768px) {
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 17rem auto;
+        grid-template-columns: 1fr 9fr;
+        grid-template-areas:
+            "projectHead projectHead"
+            "projectImg projectInfo";
+    }
+}

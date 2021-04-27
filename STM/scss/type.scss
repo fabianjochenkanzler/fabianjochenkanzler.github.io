@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+    font-size: 43.75%;
+    scroll-behavior: smooth;
+
+    @media (min-width: 640px) {
+        font-size: 50%;
+    }
+
+    @media (min-width: 960px) {
+        font-size: 62.5%;
+    }
+
+    @media (min-width: 1280px) {
+        font-size: 75%;
+    }
+
+    @media (min-width: 1600px) {
+        font-size: 100%;
+    }
+}
+
+$fFrau: "Fraunces", serif;
+$fFiraC: "Fira Sans Condensed", sans-serif;
+$fFira: "Fira Sans", sans-serif;
+$fXanh: "Xanh Mono", monospace;
+
+$fSmall: 1.5rem;
+$fRegular: 2.5rem;
+$fLarge: 3rem;
+$fHeadline: 5rem;
+
+@mixin font($fFamily, $fSize, $fWeight, $fStyle, $fColor) {
+    font-family: $fFamily;
+    font-size: $fSize;
+    font-weight: $fWeight;
+    font-style: $fStyle;
+    color: $fColor;
+    line-height: 135%;
+}
+
+span {
+    @include font($fFira, $fRegular, 300, normal, $cBlack);
+    font-size: 90%;
+}
+
+main a {
+    @include font($fFira, $fRegular, 300, normal, $cBlack);
+    font-size: 90%;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    background: radial-gradient(transparent 50%, $cYellow);
+    background-size: 100% 0.3rem;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding: 0 0.5rem;
+    transition: background-size 0.5s;
+
+    &:hover {
+        background-size: 100% 100%;
+    }
+}
+
+
+button {
+
+    @include font($fXanh, $fRegular, 200, normal, $cWhite);
+    height: 5rem;
+    width: 20rem;
+    margin-top: 5rem;
+    float: left;
+
+
+  
+
+    a {
+        @include font($fXanh, $fRegular, 200, normal, $cWhite);
+
+        text-decoration: none;
+        background: transparent;
+    }
+
+    border: 0;
+    outline: none;
+    background: transparent;
+}

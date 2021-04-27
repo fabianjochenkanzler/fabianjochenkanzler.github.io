@@ -1,0 +1,44 @@
+$cBlue: #5b7cb7;
+$cRed: #d87b6c;
+$cYellow: #eaff00;
+$cLightBeige: #eee6c2;
+$cDarkBeige: #4d4a3f;
+$cWhite: #f2f0ed;
+$cLightGray: #D9D9D6;
+$cGray: #97999B;
+$cDarkGray: #53565A;
+$cBlack: #222223;
+
+
+body {
+  color: $cWhite;
+}
+
+
+*::-webkit-scrollbar-track,
+::-webkit-scrollbar-track
+{
+  background-color: $cYellow;
+}
+
+*::-webkit-scrollbar,
+body::-webkit-scrollbar
+{
+  width: 0.5rem;
+  background-color: $cYellow;
+}
+
+*::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb
+{
+  background-color: $cBlack;
+}
+
+
+.aboutInfo {
+  background: linear-gradient(-21deg, transparent, $cWhite);
+  background-size: 100vw 300vh;
+  backdrop-filter: blur(2rem);
+  background-position: top left;
+
+}
